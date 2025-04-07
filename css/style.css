@@ -219,4 +219,11 @@
 }
 .table-wrapper table tbody tr td span.inprogress::before {
   content: "In Progress";
+}
+.table-wrapper table tbody tr td span.closed {
+  background: #880808;
+  color: white;
+}
+.table-wrapper table tbody tr td span.closed::before {
+  content: "Closed";
 }/*# sourceMappingURL=style.css.map */

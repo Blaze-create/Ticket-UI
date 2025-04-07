@@ -253,6 +253,14 @@
                                 content: 'In Progress';
                             }
                         }
+                        &.closed {
+                            background: #880808;
+                            color: white;
+
+                            &::before {
+                                content: 'Closed';
+                            }
+                        }
                     }
                 }
             }
