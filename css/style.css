@@ -166,6 +166,7 @@
 }
 .table-wrapper table {
   width: 100%;
+  text-align: center;
 }
 .table-wrapper table thead {
   border-bottom: 1px solid rgb(218, 218, 218);
@@ -191,14 +192,15 @@
   max-width: 150px;
   position: relative;
 }
-.table-wrapper table tbody tr td:hover {
-  content: attr(title);
-  /* Use the title attribute */
-  position: absolute;
-  background: #fff;
-  border: 1px solid rgba(114, 114, 114, 0.3);
+.table-wrapper table tbody tr td.open span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0096FF;
+  color: white;
   border-radius: 10px;
-  padding: 5px;
-  white-space: normal;
-  z-index: 10;
+  padding: 3px 5px;
+}
+.table-wrapper table tbody tr td.open span::before {
+  content: "Open";
 }/*# sourceMappingURL=style.css.map */
