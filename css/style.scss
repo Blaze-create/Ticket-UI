@@ -218,16 +218,40 @@
                     text-overflow: ellipsis;
                     max-width: 150px;
                     position: relative;
-                    &.open span{
+
+                    span {
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        background: #0096FF;
-                        color: white;
                         border-radius: 10px;
                         padding: 3px 5px;
-                        &::before{
-                            content: 'Open';
+
+                        &.open {
+                            background: #0096FF;
+                            color: white;
+
+                            &::before {
+                                content: 'Open';
+
+                            }
+                        }
+
+                        &.resolve {
+                            background: #50C878;
+                            color: white;
+
+                            &::before {
+                                content: 'resolve';
+                            }
+                        }
+
+                        &.inprogress {
+                            background: #FFAC1C;
+                            color: white;
+
+                            &::before {
+                                content: 'In Progress';
+                            }
                         }
                     }
                 }

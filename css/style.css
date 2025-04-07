@@ -192,15 +192,31 @@
   max-width: 150px;
   position: relative;
 }
-.table-wrapper table tbody tr td.open span {
+.table-wrapper table tbody tr td span {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #0096FF;
-  color: white;
   border-radius: 10px;
   padding: 3px 5px;
 }
-.table-wrapper table tbody tr td.open span::before {
+.table-wrapper table tbody tr td span.open {
+  background: #0096FF;
+  color: white;
+}
+.table-wrapper table tbody tr td span.open::before {
   content: "Open";
+}
+.table-wrapper table tbody tr td span.resolve {
+  background: #50C878;
+  color: white;
+}
+.table-wrapper table tbody tr td span.resolve::before {
+  content: "resolve";
+}
+.table-wrapper table tbody tr td span.inprogress {
+  background: #FFAC1C;
+  color: white;
+}
+.table-wrapper table tbody tr td span.inprogress::before {
+  content: "In Progress";
 }/*# sourceMappingURL=style.css.map */
