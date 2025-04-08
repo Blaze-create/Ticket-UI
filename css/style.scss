@@ -1,9 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 * {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
+
 .container-fluid {
   padding: 0;
   margin: 0;
@@ -12,11 +14,9 @@
 .home-wrapper {
   height: 100vh;
   width: 100%;
-  background: radial-gradient(
-      circle,
+  background: radial-gradient(circle,
       rgba(0, 0, 0, 0.95) 0%,
-      rgba(0, 0, 0, 0.8) 100%
-    ),
+      rgba(0, 0, 0, 0.8) 100%),
     url("../img/bg.jpg");
   background-size: cover;
   display: flex;
@@ -180,7 +180,7 @@
     span {
       font-weight: bold;
 
-      &:hover + button {
+      &:hover+button {
         transform: scale(1.1);
       }
     }
@@ -261,6 +261,7 @@
                 content: "In Progress";
               }
             }
+
             &.closed {
               background: #880808;
               color: white;
@@ -278,10 +279,16 @@
 
 .container-fluid.item-table {
   padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   .item-wrapper {
     display: flex;
     flex-direction: column;
     width: 100%;
+    max-width: 1500px;
 
     .table-heading {
       display: grid; // Keep table heading as a grid
@@ -324,22 +331,28 @@
         padding: 10px;
         text-align: left;
       }
+
       .item-title {
         font-size: 14px;
       }
+
       .item-type {
         font-size: 14px;
       }
+
       .user-detail {
         font-size: 12px;
+
         .commonname {
           font-weight: 700;
         }
       }
+
       .date {
         font-size: 10px;
         font-weight: 600;
       }
+
       .item-assignment {
         font-size: 14px;
       }
@@ -347,36 +360,45 @@
       .item-action button {
         padding: 5px 10px;
       }
+
       .item-status {
         span {
           font-size: 13px;
           padding: 5px 10px;
           border-radius: 5px;
+
           &.open {
             background-color: #2857a7; // Green
             color: white;
+
             &::before {
               content: "Open";
             }
           }
+
           &.closed {
             background-color: #767676; // Green
             color: white;
+
             &::before {
               content: "Closed";
             }
           }
+
           &.inprogress {
             background-color: #ffe600; // Green
             color: white;
+
             &::before {
               content: "In progress";
             }
           }
         }
       }
+
       .priority {
         text-align: center;
+
         span {
           font-size: 13px;
           padding: 5px 10px;
@@ -390,6 +412,7 @@
               content: "Low";
             }
           }
+
           &.medium {
             background-color: #ffc107; // Yellow
             color: white;
@@ -398,6 +421,7 @@
               content: "Medium";
             }
           }
+
           &.high {
             background-color: #fd7e14; // Orange
             color: white;
@@ -406,6 +430,7 @@
               content: "High";
             }
           }
+
           &.critical {
             background-color: #dc3545; // Red
             color: white;
@@ -424,9 +449,11 @@
   margin-top: 60px;
   margin-bottom: 5px;
   margin-left: 40px;
+
   h1 {
     line-height: 40px;
   }
+
   span {
     font-size: 14px;
     border-top: 1px solid rgba(3, 3, 3, 0.3);

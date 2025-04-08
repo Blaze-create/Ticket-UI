@@ -237,11 +237,16 @@
 
 .container-fluid.item-table {
   padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .container-fluid.item-table .item-wrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 1500px;
 }
 .container-fluid.item-table .item-wrapper .table-heading {
   display: grid;
