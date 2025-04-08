@@ -28,7 +28,7 @@
         <div class="create-ticket-wrapper">
             <div class="create-ticket">
                 <span> Are we having issues with your device?</span>
-                <button type="button" class="btn btn-primary">Create Ticket</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_ticket">Create Ticket</button>
             </div>
         </div>
     </div>
@@ -107,12 +107,16 @@
                                     <td>Network Connectivity Issue</td>
                                     <td data-bs-toggle="tooltip"
                                         data-bs-title="The internet connection is constantly dropping, and the Wi-Fi signal is very weak. I've tried resetting the router and moving closer to it, but the issue continues. Other devices in the house seem to have no problem connecting, but my laptop keeps disconnecting. I also tried updating the network driver, but the issue persists.">
-                                        The internet connection is constantly dropping, and the Wi-Fi signal is very weak. I've tried resetting the router and moving closer to it, but the issue continues. Other devices in the house seem to have no problem connecting, but my laptop keeps disconnecting. I also tried updating the network driver, but the issue persists.</td>
+                                        The internet connection is constantly dropping, and the Wi-Fi signal is very
+                                        weak. I've tried resetting the router and moving closer to it, but the issue
+                                        continues. Other devices in the house seem to have no problem connecting, but my
+                                        laptop keeps disconnecting. I also tried updating the network driver, but the
+                                        issue persists.</td>
                                     <td>1 photo</td>
                                     <td>Jane Doe</td>
                                     <td><span class="closed"></span></td>
                                 </tr>
-                                
+
                             </tbody>
                         </table>
                     </div>
@@ -214,6 +218,49 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="add_ticket" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <form class="modal-content" id="addForm">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        Create New Ticket
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""
+                            name="title" />
+                        <div class="form-text" id="basic-addon4">Example: Issue with network</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="8"
+                            name="description"></textarea>
+                        <div class="form-text" id="basic-addon4">Describe the issue, including symptoms, impact and
+                            relevant information.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label"><span style="color: red;">*</span>Attachment<span
+                                style="font-size: 12px;">(Optional)</span></label>
+                        <input class="form-control" type="file" id="formFile" name="attachment">
+                        <div class="form-text" id="basic-addon4">Example: Screenshow</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeBtn">
+                        Close
+                    </button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
 
 
 
