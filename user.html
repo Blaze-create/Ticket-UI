@@ -51,8 +51,10 @@
             </div>
             <div class="sidetab">
                 <div class="menu">
-                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip"
-                        data-bs-title="Add new user to management"><i class="fa-solid fa-plus"></i> Add</button>
+                    <div data-bs-toggle="tooltip" data-bs-title="Add new user to management">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                            data-bs-target="#add_user"><i class="fa-solid fa-plus"></i> Add</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -94,7 +96,7 @@
                 </div>
                 <div class="item-type">
                     Hardware
-                </div>       
+                </div>
                 <div class="role">
                     <i class="fa-solid fa-wrench"></i>
                     Technicians
@@ -120,7 +122,7 @@
                 </div>
                 <div class="item-type">
                     Hardware
-                </div>       
+                </div>
                 <div class="role admin">
                     <i class="fa-solid fa-crown"></i>
                     Admins
@@ -146,7 +148,7 @@
                 </div>
                 <div class="item-type">
                     Hardware
-                </div>       
+                </div>
                 <div class="role">
                     <i class="fa-solid fa-wrench"></i>
                     Technicians
@@ -172,7 +174,7 @@
                 </div>
                 <div class="item-type">
                     Hardware
-                </div>       
+                </div>
                 <div class="role">
                     <i class="fa-solid fa-wrench"></i>
                     Technicians
@@ -198,7 +200,7 @@
                 </div>
                 <div class="item-type">
                     Hardware
-                </div>       
+                </div>
                 <div class="role">
                     <i class="fa-solid fa-wrench"></i>
                     Technicians
@@ -212,6 +214,45 @@
 
 
 
+    <div class="modal fade" id="add_user" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <form class="modal-content" id="addForm">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        Add a new User to Management
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="    " class="form-label">Search User</label>
+
+                    <input class="form-control me-2" type="search" placeholder="Search User" aria-label="Search">
+                    <div class="form-text" id="basic-addon4">Search User by Full name or by username</div>
+                    <div class="mb-3">
+                        <label for="    " class="form-label">Select User role:</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Admins</option>
+                            <option value="1">Technicians</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="    " class="form-label">User preferred Type of Issue:</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Network</option>
+                            <option value="1">Software</option>
+                            <option value="2">Hardware</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeBtn">
+                        Close
+                    </button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
 
 

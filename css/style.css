@@ -479,4 +479,56 @@
   align-items: center;
   width: 100%;
   margin: 30px 0;
+}
+
+.modal-ticket {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  gap: 15px;
+}
+.modal-ticket .user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 70%;
+  flex: 1;
+}
+.modal-ticket .user-info .issue-attachment {
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+.modal-ticket .user-info .issue-descrip {
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+.modal-ticket .user-info .issue-descrip .title {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.modal-ticket .user-info .issue-descrip .description {
+  font-size: 14px;
+}
+.modal-ticket .user-info .employee-detail {
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+.modal-ticket .user-info .employee-detail .commonname,
+.modal-ticket .user-info .employee-detail .department,
+.modal-ticket .user-info .employee-detail .title {
+  font-size: 13px;
+}
+.modal-ticket .action {
+  width: 30%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 15px;
+  border-radius: 15px;
 }/*# sourceMappingURL=style.css.map */
