@@ -446,9 +446,10 @@
 }
 
 .dashboard-title {
-  margin-top: 60px;
-  margin-bottom: 5px;
-  margin-left: 40px;
+  margin: 60px 40px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   h1 {
     line-height: 40px;
@@ -457,6 +458,13 @@
   span {
     font-size: 14px;
     border-top: 1px solid rgba(3, 3, 3, 0.3);
+  }
+
+  .sidetab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
   }
 }
 

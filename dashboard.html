@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/e785ddfc20.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.js"></script>
     <title>Document</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark" style="padding-right: 10px;padding-left: 10px  ;">
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark"
+        style="padding-right: 10px;padding-left: 10px  ;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -45,10 +47,6 @@
                         <a class="nav-link disabled" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
             </div>
         </div>
     </nav>
@@ -57,8 +55,26 @@
 
     <div class="container-fluid">
         <div class="dashboard-title">
-            <h1>Unassigned Tickets</h1>
-            <span>Showing 10 of 50 </span>
+            <div class="title">
+                <h1>Unassigned Tickets</h1>
+                <span>Showing 10 of 50 </span>
+            </div>
+            <div class="sidetab">
+                <div class="menu">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip"
+                        data-bs-title="Display only unassign tickets">Unassigned</button>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip"
+                        data-bs-title="Display only assigned tickets">Assigned</button>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip"
+                        data-bs-title="Display only closed Tickets">Closed</button>
+                </div>
+                <div class="search">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
     <div class="container-fluid item-table">
@@ -558,6 +574,46 @@
             </div>
         </div>
     </div>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btns = document.querySelectorAll('.item-action .btn.btn-primary');
+
+            btns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    openModali(this)
+                })
+            })
+        })
+        function openModali(btn) {
+            const row = btn.closest('.item-row');
+            const date = row.querySelector('.date').textContent;
+            const user = row.querySelector('.commonname').textContent;
+            const department = row.querySelector('.department').textContent;
+            const title = row.querySelector('.title').textContent;
+            const itemType = row.querySelector('.item-type').textContent;
+            const issueTitle = row.querySelector('.item-title').textContent;
+            const assignment = row.querySelector('.item-assignment').textContent;
+            const priority = row.querySelector('.priority').textContent;
+            const status = row.querySelector('.item-status').textContent;
+
+            console.log(formatText(user));
+            console.log(formatText(issueTitle));
+            function formatText(text) {
+                text = text.trim();
+                text = text.replace(/\s+/g, ' ');
+                text = text.charAt(0).toUpperCase() + text.slice(1);
+                return text;
+            }
+        }
+    </script>
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+
 </body>
 
 </html>
