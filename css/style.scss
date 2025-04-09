@@ -14,9 +14,11 @@
 .home-wrapper {
   height: 100vh;
   width: 100%;
-  background: radial-gradient(circle,
+  background: radial-gradient(
+      circle,
       rgba(0, 0, 0, 0.95) 0%,
-      rgba(0, 0, 0, 0.8) 100%),
+      rgba(0, 0, 0, 0.8) 100%
+    ),
     url("../img/bg.jpg");
   background-size: cover;
   display: flex;
@@ -180,7 +182,7 @@
     span {
       font-weight: bold;
 
-      &:hover+button {
+      &:hover + button {
         transform: scale(1.1);
       }
     }
@@ -277,7 +279,8 @@
   }
 }
 
-.container-fluid.item-table {
+.container-fluid.item-table,
+.container.item-table {
   padding: 0 15px;
   display: flex;
   flex-direction: column;
@@ -294,6 +297,9 @@
       display: grid; // Keep table heading as a grid
       grid-template-columns: 1fr 2fr 1fr 3fr 2fr 1fr 1fr 1fr;
       font-weight: bold;
+      &.user {
+        grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      }
 
       .date,
       .user,
@@ -302,9 +308,15 @@
       .assign,
       .priority,
       .status,
-      .action {
+      .action,
+      .Task-Assigned,
+      .role,
+      .task {
         padding: 10px;
         text-align: left;
+      }
+      .action {
+        text-align: center;
       }
     }
 
@@ -314,7 +326,11 @@
       background: #eee;
       // Make it behave like a row in the grid
       margin: 5px 0;
+      padding: 0 5px;
       border-radius: 15px;
+      &.user {
+        grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      }
 
       .date,
       .user-detail,
@@ -323,13 +339,24 @@
       .item-assignment,
       .item-status,
       .priority,
-      .item-action {
+      .item-action,
+      .number,
+      .role {
         display: flex;
         align-items: start;
         flex-direction: column;
         justify-content: center;
         padding: 10px;
         text-align: left;
+      }
+      .role {
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        gap: 5px;
+        &.admin{
+          color: gold;
+        }
       }
 
       .item-title {
@@ -357,8 +384,11 @@
         font-size: 14px;
       }
 
-      .item-action button {
-        padding: 5px 10px;
+      .item-action {
+        align-items: center;
+        button {
+          padding: 5px 10px;
+        }
       }
 
       .item-status {
