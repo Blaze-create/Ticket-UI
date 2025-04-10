@@ -141,7 +141,8 @@
                     <span class="closed"></span>
                 </div>
                 <div class="item-action">
-                    <button type="button" class="btn btn-primary">View</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#view">View</button>
                 </div>
             </div>
 
@@ -177,7 +178,8 @@
                     <span class="inprogress"></span>
                 </div>
                 <div class="item-action">
-                    <button type="button" class="btn btn-primary">View</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#view">View</button>
                 </div>
             </div>
 
@@ -213,7 +215,8 @@
                     <span class="open"></span>
                 </div>
                 <div class="item-action">
-                    <button type="button" class="btn btn-primary">View</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#view">View</button>
                 </div>
             </div>
         </div>
@@ -406,23 +409,23 @@
                         <div class="user-info">
                             <div class="employee-detail">
                                 <label for="" class="form-label">Employee Details</label>
-                                <div class="commonname">
+                                <div class="commonname" id="cn">
                                     Castel Charles Nicolas
                                 </div>
-                                <div class="department">
+                                <div class="department" id="department">
                                     IT Unit
                                 </div>
-                                <div class="title">
+                                <div class="title" id="title">
                                     Support Officer
                                 </div>
                             </div>
                             <div class="issue-descrip">
                                 <label for="" class="form-label">Issue Title</label>
-                                <div class="title">
+                                <div class="title" id="issue_title">
                                     Issue with Network Connection
                                 </div>
                                 <label for="" class="form-label">Issue Description</label>
-                                <div class="description">
+                                <div class="description" id="description">
                                     The computer crashes randomly during usage. When the crash occurs,
                                     the screen goes black, and the system completely freezes. I am unable to use the
                                     mouse or keyboard, and the computer doesn't respond to any input. I have to hold
@@ -465,7 +468,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="    " class="form-label">Status</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" aria-label="Default select example" id="form_select">
                                     <option selected>Open</option>
                                     <option value="1">In Progress</option>
                                     <option value="2">Closed</option>
@@ -507,6 +510,7 @@
                 })
             })
         })
+
         function openModali(btn) {
             const row = btn.closest('.item-row');
             const date = row.querySelector('.date').textContent;
@@ -517,14 +521,42 @@
             const issueTitle = row.querySelector('.item-title').textContent;
             const assignment = row.querySelector('.item-assignment').textContent;
             const priority = row.querySelector('.priority').textContent;
-            const status = row.querySelector('.item-status').textContent;
+            const status = row.querySelector('.item-status span')?.className;
+            const select = document.getElementById('form_select');
 
-            console.log(formatText(user));
-            console.log(formatText(issueTitle));
+
+
+            document.getElementById('cn').innerHTML = formatText(user);
+            document.getElementById('department').innerHTML = formatText(department);
+            document.getElementById('title').innerHTML = formatText(title);
+            document.getElementById('issue_title').innerHTML = formatText(issueTitle);
+
+            if (status && select) {
+                let valueToSelect = "";
+
+                switch (status.toLowerCase()) {
+                    case "open":
+                        valueToSelect = "Open";
+                        break;
+                    case "inprogress":
+                        valueToSelect = "In Progress";
+                        break;
+                    case "closed":
+                        valueToSelect = "Closed";
+                        break;
+                }
+                for (let option of select.options) {
+                    if (option.text.trim() === valueToSelect) {
+                        option.selected = true;
+                        break;
+                    }
+                }
+
+            }
             function formatText(text) {
                 text = text.trim();
                 text = text.replace(/\s+/g, ' ');
-                text = text.charAt(0).toUpperCase() + text.slice(1);
+                text = text.charAt(0) + text.slice(1);
                 return text;
             }
         }
