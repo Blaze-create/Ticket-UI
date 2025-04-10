@@ -222,7 +222,7 @@
         </div>
     </div>
 
-    
+
 
 
     <div class="container-fluid">
@@ -446,7 +446,8 @@
                             </div>
                             <div class="mb-3">
                                 <label for="    " class="form-label">Priority</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" aria-label="Default select example"
+                                    id="form_select_priority">
                                     <option selected>Low</option>
                                     <option value="1">Medium</option>
                                     <option value="2">High</option>
@@ -465,7 +466,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="    " class="form-label">Status</label>
-                                <select class="form-select" aria-label="Default select example" id="form_select">
+                                <select class="form-select" aria-label="Default select example" id="form_select_status">
                                     <option selected>Open</option>
                                     <option value="1">In Progress</option>
                                     <option value="2">Closed</option>
@@ -517,18 +518,19 @@
             const itemType = row.querySelector('.item-type').textContent;
             const issueTitle = row.querySelector('.item-title').textContent;
             const assignment = row.querySelector('.item-assignment').textContent;
-            const priority = row.querySelector('.priority').textContent;
+            const priority = row.querySelector('.priority span')?.className;
             const status = row.querySelector('.item-status span')?.className;
-            const select = document.getElementById('form_select');
+            const select_status = document.getElementById('form_select_status');
+            const select_priority = document.getElementById('form_select_priority');
 
-
+            console.log(formatText(priority));
 
             document.getElementById('cn').innerHTML = formatText(user);
             document.getElementById('department').innerHTML = formatText(department);
             document.getElementById('title').innerHTML = formatText(title);
             document.getElementById('issue_title').innerHTML = formatText(issueTitle);
 
-            if (status && select) {
+            if (status && select_status) {
                 let valueToSelect = "";
 
                 switch (status.toLowerCase()) {
@@ -542,7 +544,32 @@
                         valueToSelect = "Closed";
                         break;
                 }
-                for (let option of select.options) {
+                for (let option of select_status.options) {
+                    if (option.text.trim() === valueToSelect) {
+                        option.selected = true;
+                        break;
+                    }
+                }
+
+            }
+            if (priority && select_priority) {
+                let valueToSelect = "";
+
+                switch (priority.toLowerCase()) {
+                    case "low":
+                        valueToSelect = "Low";
+                        break;
+                    case "medium":
+                        valueToSelect = "Medium";
+                        break;
+                    case "high":
+                        valueToSelect = "High";
+                        break;
+                    case "critical":
+                        valueToSelect = "Critical";
+                        break;
+                }
+                for (let option of select_priority.options) {
                     if (option.text.trim() === valueToSelect) {
                         option.selected = true;
                         break;
