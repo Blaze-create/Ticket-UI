@@ -329,6 +329,10 @@
   padding: 10px;
   text-align: left;
 }
+.container-fluid.item-table .item-wrapper .item-row .item-description,
+.container.item-table .item-wrapper .item-row .item-description {
+  display: none;
+}
 .container-fluid.item-table .item-wrapper .item-row .role,
 .container.item-table .item-wrapper .item-row .role {
   flex-direction: row;
