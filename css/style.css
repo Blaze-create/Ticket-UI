@@ -492,6 +492,62 @@
   align-items: start;
   gap: 15px;
 }
+.modal-ticket .comment {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-direction: column;
+  gap: 15px;
+}
+.modal-ticket .comment .comment-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  flex: 1;
+}
+.modal-ticket .comment .comment-section .a-comment {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  background: red;
+}
+.modal-ticket .comment .comment-section .a-comment .profile {
+  width: 10px;
+  height: 10px;
+  background: blue;
+  border-radius: 50%;
+}
+.modal-ticket .comment .comment-section .a-comment .comment {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  width: 100%;
+  background: green;
+}
+.modal-ticket .comment .comment-section .a-comment .comment .name {
+  margin: 0;
+  font-size: 8px;
+  background: blue;
+}
+.modal-ticket .comment .comment-section .a-comment .comment .the-comment {
+  margin: 0;
+  font-size: 10px;
+  background: yellow;
+}
+.modal-ticket .comment .comment-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
 .modal-ticket .user-info {
   display: flex;
   flex-direction: column;
@@ -499,10 +555,18 @@
   width: 70%;
   flex: 1;
 }
-.modal-ticket .user-info .issue-attachment {
+.modal-ticket .user-info .top-bar {
+  display: flex;
+  gap: 15px;
+}
+.modal-ticket .user-info .top-bar .issue-attachment {
   border-radius: 15px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 }
 .modal-ticket .user-info .issue-descrip {
   border-radius: 15px;
@@ -516,10 +580,26 @@
 .modal-ticket .user-info .issue-descrip .description {
   font-size: 14px;
 }
+.modal-ticket .user-info .ticketid {
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 15px;
+}
+.modal-ticket .user-info .ticketid .id,
+.modal-ticket .user-info .ticketid .date {
+  font-size: 13px;
+  line-height: 12px;
+}
 .modal-ticket .user-info .employee-detail {
   border-radius: 15px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 10px;
+  max-width: 200px;
 }
 .modal-ticket .user-info .employee-detail .commonname,
 .modal-ticket .user-info .employee-detail .department,
@@ -527,11 +607,10 @@
   font-size: 13px;
 }
 .modal-ticket .action {
-  width: 30%;
   border: 1px solid rgba(0, 0, 0, 0.3);
   height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-evenly;
   padding: 15px;
   border-radius: 15px;

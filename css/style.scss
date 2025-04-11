@@ -14,9 +14,11 @@
 .home-wrapper {
   height: 100vh;
   width: 100%;
-  background: radial-gradient(circle,
+  background: radial-gradient(
+      circle,
       rgba(0, 0, 0, 0.95) 0%,
-      rgba(0, 0, 0, 0.8) 100%),
+      rgba(0, 0, 0, 0.8) 100%
+    ),
     url("../img/bg.jpg");
   background-size: cover;
   display: flex;
@@ -180,7 +182,7 @@
     span {
       font-weight: bold;
 
-      &:hover+button {
+      &:hover + button {
         transform: scale(1.1);
       }
     }
@@ -520,7 +522,62 @@
   justify-content: center;
   align-items: start;
   gap: 15px;
-
+  .comment {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-self: stretch;
+    flex-direction: column;
+    gap: 15px;
+    .comment-section {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      border-radius: 15px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      flex: 1;
+      .a-comment {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        background: red;
+        .profile {
+          width: 10px;
+          height: 10px;
+          background: blue;
+          border-radius: 50%;
+        }
+        .comment {
+          display: flex;
+          align-items: start;
+          justify-content: start;
+          width: 100%;
+          background: green;
+          .name {
+            margin: 0;
+            font-size: 8px;
+            background: blue;
+          }
+          .the-comment {
+            margin: 0;
+            font-size: 10px;
+            background: yellow;
+          }
+        }
+      }
+    }
+    .comment-input {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      border-radius: 15px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      padding: 10px;
+    }
+  }
   .user-info {
     display: flex;
     flex-direction: column;
@@ -528,10 +585,18 @@
     width: 70%;
     flex: 1;
 
-    .issue-attachment {
-      border-radius: 15px;
-      border: 1px solid rgba(0, 0, 0, 0.2);
-      padding: 10px;
+    .top-bar {
+      display: flex;
+      gap: 15px;
+      .issue-attachment {
+        border-radius: 15px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+      }
     }
 
     .issue-descrip {
@@ -548,12 +613,27 @@
         font-size: 14px;
       }
     }
-
-    .employee-detail {
+    .ticketid {
       border-radius: 15px;
       border: 1px solid rgba(0, 0, 0, 0.2);
       padding: 10px;
 
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      flex-direction: column;
+      gap: 15px;
+      .id,
+      .date {
+        font-size: 13px;
+        line-height: 12px;
+      }
+    }
+    .employee-detail {
+      border-radius: 15px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      max-width: 200px;
       .commonname,
       .department,
       .title {
@@ -563,11 +643,10 @@
   }
 
   .action {
-    width: 30%;
     border: 1px solid rgba(0, 0, 0, 0.3);
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-evenly;
 
     padding: 15px;
@@ -577,7 +656,7 @@
 
 .get-user-ul {
   margin: 0;
-  padding:0 10px;
+  padding: 0 10px;
 
   .get-user-li {
     color: black;
@@ -588,7 +667,7 @@
     border-radius: 5px;
     cursor: pointer;
     user-select: none;
-    transition: .3s ease-in-out;
+    transition: 0.3s ease-in-out;
 
     &:hover {
       background: rgba(0, 0, 0, 0.3);
@@ -600,5 +679,4 @@
       color: white;
     }
   }
-
 }

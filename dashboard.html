@@ -409,18 +409,32 @@
                 <div class="modal-body">
                     <div class="modal-ticket">
                         <div class="user-info">
-                            <div class="employee-detail">
-                                <label for="" class="form-label">Employee Details</label>
-                                <div class="commonname" id="cn">
-                                    Castel Charles Nicolas
+                            <div class="top-bar">
+                                <div class="ticketid">
+                                    <div class="id">
+                                        <label for="" class="form-label">Ticket Number:</label> <span>0001</span>
+                                    </div>
+                                    <div class="date">
+                                        <label for="" class="form-label">Date:</label> <span>1 Day ago</span>
+                                    </div>
                                 </div>
-                                <div class="department" id="department">
-                                    IT Unit
+                                <div class="employee-detail">
+                                    <label for="" class="form-label">Employee Details</label>
+                                    <div class="commonname" id="cn">
+                                        Castel Charles Nicolas
+                                    </div>
+                                    <div class="department" id="department">
+                                        IT Unit
+                                    </div>
+                                    <div class="title" id="title">
+                                        Support Officer
+                                    </div>
                                 </div>
-                                <div class="title" id="title">
-                                    Support Officer
+                                <div class="issue-attachment">
+                                    No Attachment
                                 </div>
                             </div>
+
                             <div class="issue-descrip">
                                 <label for="" class="form-label">Issue Title</label>
                                 <div class="title" id="issue_title">
@@ -428,52 +442,75 @@
                                 </div>
                                 <label for="" class="form-label">Issue Description</label>
                                 <div class="description" id="description">
-                                    
+
                                 </div>
                             </div>
-                            <div class="issue-attachment">
-                                No Attachment
+                            <div class="action">
+                                <div class="mb-3">
+                                    <label for="    " class="form-label">Issue Type</label>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Unassigned</option>
+                                        <option>Network</option>
+                                        <option value="1">Hardware</option>
+                                        <option value="2">Software</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="    " class="form-label">Priority</label>
+                                    <select class="form-select" aria-label="Default select example"
+                                        id="form_select_priority">
+                                        <option selected>Low</option>
+                                        <option value="1">Medium</option>
+                                        <option value="2">High</option>
+                                        <option value="2">Critical</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="    " class="form-label">Assign to</label>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Unassigned</option>
+                                        <option>Castel Charles Nicolas</option>
+                                        <option value="1">John Doe</option>
+                                        <option value="2">Ligma ball</option>
+                                        <option value="2">Sarah How</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="    " class="form-label">Status</label>
+                                    <select class="form-select" aria-label="Default select example"
+                                        id="form_select_status">
+                                        <option selected>Open</option>
+                                        <option value="1">In Progress</option>
+                                        <option value="2">Closed</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                        <div class="action">
-                            <div class="mb-3">
-                                <label for="    " class="form-label">Issue Type</label>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Unassigned</option>
-                                    <option>Network</option>
-                                    <option value="1">Hardware</option>
-                                    <option value="2">Software</option>
-                                </select>
+                        <div class="comment">
+                            <div class="comment-section">
+                                <div class="a-comment">
+                                    <div class="profile">
+
+                                    </div>
+                                    <div class="comment">
+                                        <div class="name">
+                                            Castel Charles Nicolas
+                                        </div>
+                                        <div class="the-comment">
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="    " class="form-label">Priority</label>
-                                <select class="form-select" aria-label="Default select example"
-                                    id="form_select_priority">
-                                    <option selected>Low</option>
-                                    <option value="1">Medium</option>
-                                    <option value="2">High</option>
-                                    <option value="2">Critical</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="    " class="form-label">Assign to</label>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Unassigned</option>
-                                    <option>Castel Charles Nicolas</option>
-                                    <option value="1">John Doe</option>
-                                    <option value="2">Ligma ball</option>
-                                    <option value="2">Sarah How</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="    " class="form-label">Status</label>
-                                <select class="form-select" aria-label="Default select example" id="form_select_status">
-                                    <option selected>Open</option>
-                                    <option value="1">In Progress</option>
-                                    <option value="2">Closed</option>
-                                </select>
+                            <div class="comment-input">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Comments or Notes"
+                                        aria-label="Recipient's username" aria-describedby="button-addon2">
+                                    <button class="btn btn-primary  " type="button" id="button-addon2">Submit</button>
+                                </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
                 <div class="modal-footer">
