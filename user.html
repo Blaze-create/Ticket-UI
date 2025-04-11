@@ -224,19 +224,28 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <label for="    " class="form-label">Search User</label>
-
-                    <input class="form-control me-2" type="search" placeholder="Search User" aria-label="Search">
-                    <div class="form-text" id="basic-addon4">Search User by Full name or by username</div>
                     <div class="mb-3">
-                        <label for="    " class="form-label">Select User role:</label>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Admins</option>
-                            <option value="1">Technicians</option>
-                        </select>
+                        <label for="    " class="form-label">Search User by Full name or by username:</label>
+                        <input class="form-control me-2" type="search" placeholder="Search User" aria-label="Search">
                     </div>
                     <div class="mb-3">
-                        <label for="    " class="form-label">User preferred Type of Issue:</label>
+                        <label for="    " class="form-label">Identify and select the correct user:</label>
+                        <ul class="get-user-ul" id="get_user">
+                            <li class="get-user-li" data-bs-sam="c0001">Castel Charles Nicolas</li>
+                            <li class="get-user-li" data-bs-sam="b0002">Bapstise Luc Goelson</li>
+                            <li class="get-user-li" data-bs-sam="j0003">John Doe</li>
+                        </ul>
+                    </div>
+                    <div class="mb-3">
+                        <label for="    " class="form-label">Please select the role the user will be assigned to:</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option>Admins</option>
+                            <option value="1" selected>Technicians</option>
+                        </select>
+                       
+                    </div>
+                    <div class="mb-3">
+                        <label for="    " class="form-label">Select preferred issue type for automatic task assignment:</label>
                         <select class="form-select" aria-label="Default select example">
                             <option selected>Network</option>
                             <option value="1">Software</option>
@@ -253,6 +262,31 @@
             </form>
         </div>
     </div>
+
+    <script>
+        let selectedUserId = null;
+
+        document.querySelectorAll('.get-user-li').forEach(item => {
+            item.addEventListener('click', () => {
+                const isSelected = item.classList.contains('selected');
+
+                // Remove "selected" from all items
+                document.querySelectorAll('.get-user-li').forEach(li => li.classList.remove('selected'));
+
+                if (isSelected) {
+                    // Deselect if already selected
+                    selectedUserId = null;
+                } else {
+                    // Select the clicked item
+                    item.classList.add('selected');
+                    selectedUserId = item.getAttribute('data-bs-sam');
+                }
+
+                console.log('Selected User ID:', selectedUserId);
+            });
+        });
+    </script>
+
 
 
 

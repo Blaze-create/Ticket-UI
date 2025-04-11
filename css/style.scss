@@ -574,3 +574,31 @@
     border-radius: 15px;
   }
 }
+
+.get-user-ul {
+  margin: 0;
+  padding:0 10px;
+
+  .get-user-li {
+    color: black;
+    list-style-type: none;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    transition: .3s ease-in-out;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    &.selected {
+      background: #0178ff;
+      border: 1px solid #0178ff;
+      color: white;
+    }
+  }
+
+}
