@@ -94,6 +94,11 @@
                 <div class="item-title">
                     Issue with Network connection
                 </div>
+                <div class="item-description">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, corrupti eveniet architecto,
+                    mollitia alias perferendis fuga dolorem minima ducimus temporibus, error aspernatur maxime repellat
+                    veniam!
+                </div>
                 <div class="item-assignment">
                     unassigned
                 </div>
@@ -423,11 +428,7 @@
                                 </div>
                                 <label for="" class="form-label">Issue Description</label>
                                 <div class="description" id="description">
-                                    The computer crashes randomly during usage. When the crash occurs,
-                                    the screen goes black, and the system completely freezes. I am unable to use the
-                                    mouse or keyboard, and the computer doesn't respond to any input. I have to hold
-                                    down the power button for 10 seconds to force a shutdown and then restart the
-                                    computer. Upon restarting,
+                                    
                                 </div>
                             </div>
                             <div class="issue-attachment">
@@ -515,6 +516,7 @@
             const user = row.querySelector('.commonname').textContent;
             const department = row.querySelector('.department').textContent;
             const title = row.querySelector('.title').textContent;
+            const description = row.querySelector('.item-description').textContent;
             const itemType = row.querySelector('.item-type').textContent;
             const issueTitle = row.querySelector('.item-title').textContent;
             const assignment = row.querySelector('.item-assignment').textContent;
@@ -529,6 +531,7 @@
             document.getElementById('department').innerHTML = formatText(department);
             document.getElementById('title').innerHTML = formatText(title);
             document.getElementById('issue_title').innerHTML = formatText(issueTitle);
+            document.getElementById('description').innerHTML = formatText(description);
 
             if (status && select_status) {
                 let valueToSelect = "";
