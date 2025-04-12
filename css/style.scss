@@ -14,11 +14,9 @@
 .home-wrapper {
   height: 100vh;
   width: 100%;
-  background: radial-gradient(
-      circle,
+  background: radial-gradient(circle,
       rgba(0, 0, 0, 0.95) 0%,
-      rgba(0, 0, 0, 0.8) 100%
-    ),
+      rgba(0, 0, 0, 0.8) 100%),
     url("../img/bg.jpg");
   background-size: cover;
   display: flex;
@@ -182,7 +180,7 @@
     span {
       font-weight: bold;
 
-      &:hover + button {
+      &:hover+button {
         transform: scale(1.1);
       }
     }
@@ -353,7 +351,8 @@
         text-align: left;
       }
 
-      .item-description {
+      .item-description,
+      .item-id {
         display: none;
       }
 
@@ -522,6 +521,7 @@
   justify-content: center;
   align-items: start;
   gap: 15px;
+
   .comment {
     width: 30%;
     display: flex;
@@ -529,6 +529,7 @@
     align-self: stretch;
     flex-direction: column;
     gap: 15px;
+
     .comment-section {
       display: flex;
       flex-direction: column;
@@ -537,37 +538,39 @@
       border: 1px solid rgba(0, 0, 0, 0.2);
       padding: 10px;
       flex: 1;
+
       .a-comment {
         display: flex;
         flex-direction: row;
         justify-content: start;
-        align-items: center;
-        background: red;
+        align-items: start;
+        gap: 5px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+        padding: 10px;
+
         .profile {
           width: 10px;
           height: 10px;
-          background: blue;
           border-radius: 50%;
+          background: blue;
         }
-        .comment {
+
+        .commentt {
           display: flex;
-          align-items: start;
-          justify-content: start;
+          flex-direction: column;
           width: 100%;
-          background: green;
+
           .name {
-            margin: 0;
-            font-size: 8px;
-            background: blue;
-          }
-          .the-comment {
-            margin: 0;
             font-size: 10px;
-            background: yellow;
+          }
+
+          .the-comment {
+            font-size: 12px;
           }
         }
       }
     }
+
     .comment-input {
       display: flex;
       justify-content: center;
@@ -578,6 +581,7 @@
       padding: 10px;
     }
   }
+
   .user-info {
     display: flex;
     flex-direction: column;
@@ -588,6 +592,7 @@
     .top-bar {
       display: flex;
       gap: 15px;
+
       .issue-attachment {
         border-radius: 15px;
         border: 1px solid rgba(0, 0, 0, 0.2);
@@ -613,6 +618,7 @@
         font-size: 14px;
       }
     }
+
     .ticketid {
       border-radius: 15px;
       border: 1px solid rgba(0, 0, 0, 0.2);
@@ -623,17 +629,20 @@
       align-items: start;
       flex-direction: column;
       gap: 15px;
+
       .id,
       .date {
         font-size: 13px;
         line-height: 12px;
       }
     }
+
     .employee-detail {
       border-radius: 15px;
       border: 1px solid rgba(0, 0, 0, 0.2);
       padding: 10px;
       max-width: 200px;
+
       .commonname,
       .department,
       .title {
