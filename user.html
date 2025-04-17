@@ -103,7 +103,7 @@
                 </div>
                 <div class="item-action">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#view_user">View</button>
+                        data-bs-target="#view">View</button>
                 </div>
             </div>
             <div class="item-row user">
@@ -129,7 +129,8 @@
                     Admins
                 </div>
                 <div class="item-action">
-                    <button type="button" class="btn btn-primary">View</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#view">View</button>
                 </div>
             </div>
             <div class="item-row user">
@@ -266,7 +267,6 @@
                             <option>Admins</option>
                             <option value="1" selected>Technicians</option>
                         </select>
-
                     </div>
                     <div class="mb-3">
                         <label for="    " class="form-label">Select preferred issue type for automatic task
@@ -311,6 +311,88 @@
             });
         });
     </script>
+
+
+    <div class="modal fade" data-bs-backdrop="static" id="view" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <form class="modal-content" id="addForm">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        Viewing User detail
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="user-view">
+                        <h6>User Detail</h6>
+                        <div class="user-profile">
+                            <div class="profile">
+                                M
+                            </div>
+                            <div class="user-detail">
+                                <div class="title">Full Name</div>
+                                <div class="name">Castel Charles Nicolas</div>
+                                <div class="title">Email</div>
+                                <div class="name">charlescastel4@gmail.com</div>
+                            </div>
+                        </div>
+                        <div class="user-job">
+                            <div class="user-title">
+                                <div class="title">Title</div>
+                                <div class="name">IT Support Officer</div>
+                            </div>
+                            <div class="user-department">
+                                <div class="title">Department</div>
+                                <div class="name">IT Unit</div>
+                            </div>
+                        </div>
+                        <h6>User Position</h6>
+                        <div class="user-position">
+                            <div class="mb-3">
+                                <label for="    " class="form-label">Issue Type</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Unassigned</option>
+                                    <option>Network</option>
+                                    <option value="1">Hardware</option>
+                                    <option value="2">Software</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="    " class="form-label">User Role</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option>Admins</option>
+                                    <option value="1" selected>Technicians</option>
+                                </select>
+                            </div>
+                        </div>
+                        <h6>User tickets details</h6>
+                        <div class="user-ticket">
+                            <div class="ticket-active">
+                                <div class="title">Tickets Active:</div>
+                                <div class="name">10</div>
+                            </div>
+                            <div class="ticket-close">
+                                <div class="title">Tickets resolved & Closed</div>
+                                <div class="name">100</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeBtn">
+                        Close
+                    </button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
 
 
 
