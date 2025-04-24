@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/e785ddfc20.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark"
+        style="padding-right: 10px;padding-left: 10px  ;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">HelpCenter ICT</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Ticket</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">User management</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Analyst</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="dashboard-title">
+            <div class="title">
+                <h1>FAQ Management</h1>
+                <span>Showing 10 of 50 </span>
+            </div>
+            <div class="sidetab">
+                <div class="menu">
+                    <div data-bs-toggle="tooltip" data-bs-title="Create a new FAQ">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                            data-bs-target="#addFAQ"><i class="fa-solid fa-plus"></i> Create New</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container item-table">
+        <div class="item-wrapper">
+            <div class="table-heading faq">
+                <div class="date">
+                    Date
+                </div>
+                <div class="faq-title">
+                    FAQ Title
+                </div>
+                <div class="type">
+                    Category
+                </div>
+                <div class="role">
+                    Created by
+                </div>
+                <div class="status">
+                    Status
+                </div>
+                <div class="action">
+                    Action
+                </div>
+            </div>
+            <div class="item-row faq">
+                <div class="date">
+                    1 day ago
+                </div>
+                <div class="item-title">
+                    How can I update my account information?
+                </div>
+                <div class="item-type">
+                    Hardware
+                </div>
+                <div class="user-detail">
+                    <div class="commonname">
+                        Castel Charles Nicolas
+                    </div>
+                    <div class="department">
+                        IT Unit
+                    </div>
+                    <div class="title">
+                        IT Support Officer
+                    </div>
+                </div>
+                <div class="item-status">
+                    Draft
+                </div>
+                <div class="item-action">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="">View</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" data-bs-backdrop="static" id="addFAQ" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <form class="modal-content" id="addForm">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        Creating New FAQ
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">FAQ Title</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Answer</label>
+                        <textarea class="form-control" rows="4"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="    " class="form-label">FAQ Type</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Unassigned</option>
+                            <option>Network</option>
+                            <option value="1">Hardware</option>
+                            <option value="2">Software</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="    " class="form-label">Status</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Draft</option>
+                            <option>internal</option>
+                            <option value="1">public</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Tags (comma-separated)</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeBtn">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete">
+                        Delete
+                    </button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal fade" data-bs-backdrop="static" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <form class="modal-content" id="addForm">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        Confirm Deletion
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="warning-wrapper">
+                        <div class="warnn">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+                    <div class="alert alert-danger" role="alert">
+                        Are you sure you want to permanently delete this ticket? This action cannot be undone.
+                    </div>
+                    <p class="text-muted mb-0">
+                        Please confirm that you understand the consequences of deleting this ticket.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeBtn">
+                        Close
+                    </button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+
+</body>
+
+</html>

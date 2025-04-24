@@ -111,6 +111,7 @@
                 <div class="item-action">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#view">View</button>
+                    <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                 </div>
             </div>
 
@@ -148,6 +149,7 @@
                 <div class="item-action">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#view">View</button>
+                    <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                 </div>
             </div>
 
@@ -185,6 +187,7 @@
                 <div class="item-action">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#view">View</button>
+                    <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                 </div>
             </div>
 
@@ -222,6 +225,7 @@
                 <div class="item-action">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#view">View</button>
+                    <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                 </div>
             </div>
         </div>
@@ -282,6 +286,7 @@
                 </div>
                 <div class="item-action">
                     <button type="button" class="btn btn-primary">View</button>
+                    <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                 </div>
             </div>
 
@@ -431,7 +436,20 @@
                                     </div>
                                 </div>
                                 <div class="issue-attachment">
-                                    No Attachment
+                                    <label for="" class="form-label">Attachment</label>
+                                    <div class="attachment">
+                                        <div class="attach">
+                                            <i class="fa-solid fa-image"></i>
+                                        </div>
+                                        <div class="attach">
+                                            FAQ
+                                        </div>
+
+                                    </div>
+                                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                                        data-bs-target="#addAttachment"><i class="fa-solid fa-plus"
+                                            data-bs-toggle="tooltip"
+                                            data-bs-title="Add File or Link an FAQ"></i></button>
                                 </div>
                             </div>
 
@@ -543,7 +561,82 @@
 
 
 
+    <div class="modal fade" data-bs-backdrop="static" id="addAttachment" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <form class="modal-content" id="addForm">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        Add Attachment to Ticket
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="" class="form-label">Ticket Title</label>
+                        <p class="h6">Issue with Network Connection</p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Add Files or Images</label>
+                        <input class="form-control" type="file" id="formFile">
+                    </div>
+                    <div class="mb-3">
+                        OR
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Link to Relevant FAQ</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Unassigned</option>
+                            <option>Why is my computer running slowly?</option>
+                            <option value="1">What should I do if my computer won't turn on?</option>
+                            <option value="2">How can I fix frequent system crashes or freezes?</option>
+                            <option value="2">Why am I seeing a blue screen error (BSOD)?</option>
+                            <option value="2">How do I check for and install system updates?</option>
+                            <option value="2">My computer is overheating—what steps can I take?</option>
+                            <option value="2">Why can't I connect to the internet or Wi-Fi?</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeBtn">
+                        Close
+                    </button>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
+
+
+    <div class="modal fade" data-bs-backdrop="static" id="view" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <form class="modal-content" id="addForm">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        Mark Ticket as Resolved
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Technician’s Remarks</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
+                    </div>
+                    <div class="alert alert-success" role="alert">
+                        Are you sure you want to mark this ticket as resolved?
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeBtn">
+                        Close
+                    </button>
+                    <button type="submit" class="btn btn-success" disabled>Resolve</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
 
     <script>

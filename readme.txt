@@ -21,3 +21,7 @@ ___Generate reports on ticket volume, resolution times, and trends
 -Trends:||Spot patterns over time — like more issues on Mondays
 ||Frequent problems (e.g., “Wi-Fi not working” appears in 40% of tickets)sudden spike in printer problems.
 
+delete modal
+add faq modal
+add attachment modal
+resolve confirmation modal

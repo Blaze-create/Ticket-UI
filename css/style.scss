@@ -14,11 +14,9 @@
 .home-wrapper {
   height: 100vh;
   width: 100%;
-  background: radial-gradient(
-      circle,
+  background: radial-gradient(circle,
       rgba(0, 0, 0, 0.95) 0%,
-      rgba(0, 0, 0, 0.8) 100%
-    ),
+      rgba(0, 0, 0, 0.8) 100%),
     url("../img/bg.jpg");
   background-size: cover;
   display: flex;
@@ -182,7 +180,7 @@
     span {
       font-weight: bold;
 
-      &:hover + button {
+      &:hover+button {
         transform: scale(1.1);
       }
     }
@@ -302,6 +300,10 @@
         grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
       }
 
+      &.faq {
+        grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+      }
+
       .date,
       .user,
       .issue,
@@ -312,7 +314,8 @@
       .action,
       .Task-Assigned,
       .role,
-      .task {
+      .task,
+      .faq-title {
         padding: 10px;
         text-align: left;
       }
@@ -333,6 +336,10 @@
 
       &.user {
         grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      }
+
+      &.faq {
+        grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
       }
 
       .date,
@@ -396,6 +403,8 @@
 
       .item-action {
         align-items: center;
+        flex-direction: row;
+        gap: 5px;
 
         button {
           padding: 5px 10px;
@@ -598,11 +607,39 @@
       .issue-attachment {
         border-radius: 15px;
         border: 1px solid rgba(0, 0, 0, 0.2);
-        padding: 10px;
+        padding: 15px;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: start;
+        align-items: start;
         flex: 1;
+        position: relative;
+        flex-direction: column;
+
+        .attachment {
+          display: flex;
+          min-height: 10px;
+          width: 85%;
+
+          .attach {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+          }
+        }
+
+        button {
+          position: absolute;
+          top: 0;
+          right: 0;
+          margin: 15px;
+        }
       }
     }
 
@@ -697,13 +734,16 @@
     // margin-top: 15px;
     padding: 15px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
     &:not(:first-child) {
       margin-top: 15px;
     }
   }
+
   .user-profile {
     display: flex;
     gap: 15px;
+
     .profile {
       width: 50px;
       height: 50px;
@@ -714,6 +754,7 @@
       justify-content: center;
       align-items: center;
     }
+
     .user-detail {
       .title {
         font-size: 13px;
@@ -721,10 +762,12 @@
       }
     }
   }
+
   .user-job {
     display: flex;
     gap: 25px;
     padding-left: 65px;
+
     .user-title,
     .user-department {
       .title {
@@ -733,20 +776,45 @@
       }
     }
   }
+
   .user-position {
     display: flex;
     justify-content: space-evenly;
   }
+
   .user-ticket {
     display: flex;
     justify-content: space-evenly;
+
     .title {
       font-size: 13px;
       opacity: 0.7;
     }
+
     .name {
       font-size: 24px;
       letter-spacing: 3px;
     }
+  }
+}
+
+.warning-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+
+  .warnn {
+    font-size: 80px;
+    color: #B22222;
+    border: 2px solid #B22222;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
   }
 }

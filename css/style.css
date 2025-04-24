@@ -260,6 +260,10 @@
 .container.item-table .item-wrapper .table-heading.user {
   grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
 }
+.container-fluid.item-table .item-wrapper .table-heading.faq,
+.container.item-table .item-wrapper .table-heading.faq {
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+}
 .container-fluid.item-table .item-wrapper .table-heading .date,
 .container-fluid.item-table .item-wrapper .table-heading .user,
 .container-fluid.item-table .item-wrapper .table-heading .issue,
@@ -271,6 +275,7 @@
 .container-fluid.item-table .item-wrapper .table-heading .Task-Assigned,
 .container-fluid.item-table .item-wrapper .table-heading .role,
 .container-fluid.item-table .item-wrapper .table-heading .task,
+.container-fluid.item-table .item-wrapper .table-heading .faq-title,
 .container.item-table .item-wrapper .table-heading .date,
 .container.item-table .item-wrapper .table-heading .user,
 .container.item-table .item-wrapper .table-heading .issue,
@@ -281,7 +286,8 @@
 .container.item-table .item-wrapper .table-heading .action,
 .container.item-table .item-wrapper .table-heading .Task-Assigned,
 .container.item-table .item-wrapper .table-heading .role,
-.container.item-table .item-wrapper .table-heading .task {
+.container.item-table .item-wrapper .table-heading .task,
+.container.item-table .item-wrapper .table-heading .faq-title {
   padding: 10px;
   text-align: left;
 }
@@ -301,6 +307,10 @@
 .container-fluid.item-table .item-wrapper .item-row.user,
 .container.item-table .item-wrapper .item-row.user {
   grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+}
+.container-fluid.item-table .item-wrapper .item-row.faq,
+.container.item-table .item-wrapper .item-row.faq {
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
 }
 .container-fluid.item-table .item-wrapper .item-row .date,
 .container-fluid.item-table .item-wrapper .item-row .user-detail,
@@ -374,6 +384,8 @@
 .container-fluid.item-table .item-wrapper .item-row .item-action,
 .container.item-table .item-wrapper .item-row .item-action {
   align-items: center;
+  flex-direction: row;
+  gap: 5px;
 }
 .container-fluid.item-table .item-wrapper .item-row .item-action button,
 .container.item-table .item-wrapper .item-row .item-action button {
@@ -560,11 +572,36 @@
 .modal-ticket .user-info .top-bar .issue-attachment {
   border-radius: 15px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 10px;
+  padding: 15px;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex: 1;
+  position: relative;
+  flex-direction: column;
+}
+.modal-ticket .user-info .top-bar .issue-attachment .attachment {
+  display: flex;
+  min-height: 10px;
+  width: 85%;
+}
+.modal-ticket .user-info .top-bar .issue-attachment .attachment .attach {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 1;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.modal-ticket .user-info .top-bar .issue-attachment button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 15px;
 }
 .modal-ticket .user-info .issue-descrip {
   border-radius: 15px;
@@ -690,4 +727,23 @@
 .user-view .user-ticket .name {
   font-size: 24px;
   letter-spacing: 3px;
+}
+
+.warning-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+}
+.warning-wrapper .warnn {
+  font-size: 80px;
+  color: #B22222;
+  border: 2px solid #B22222;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=style.css.map */
