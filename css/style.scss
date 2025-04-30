@@ -301,7 +301,7 @@
       }
 
       &.faq {
-        grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 1fr;
       }
 
       .date,
@@ -315,6 +315,7 @@
       .Task-Assigned,
       .role,
       .task,
+      .tag,
       .faq-title {
         padding: 10px;
         text-align: left;
@@ -339,7 +340,7 @@
       }
 
       &.faq {
-        grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 1fr;
       }
 
       .date,
@@ -350,6 +351,7 @@
       .item-status,
       .priority,
       .item-action,
+      .item-tag,
       .number,
       .role {
         display: flex;
@@ -363,6 +365,24 @@
       .item-description,
       .item-id {
         display: none;
+      }
+
+      .item-tag {
+        justify-content: start;
+
+        .tag-wrapper {
+          width: 100%;
+
+          .a-tag {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 1px 5px;
+            border-radius: 5px;
+            font-size: 9px;
+            width: fit-content;
+            height: max-content;
+          }
+        }
       }
 
       .role {
@@ -412,13 +432,34 @@
       }
 
       .item-status {
+        .faq-visibility {
+          background: rgba(0, 0, 0, 0.1);
+          padding: 5px 8px;
+          border-radius: 5px;
+
+          &.public {
+            background: rgba(0, 128, 0, 0.5);
+            color: white;
+          }
+
+          &.internal {
+            background: rgba(128, 0, 0, 0.5);
+            color: white;
+          }
+
+          &.draft {
+            background: rgba(0, 0, 128, 0.5);
+            color: white;
+          }
+        }
+
         span {
           font-size: 13px;
           padding: 5px 10px;
           border-radius: 5px;
 
           &.open {
-            background-color: #2857a7; // Green
+            background-color: rgb(40, 87, 167); // Green
             color: white;
 
             &::before {
@@ -427,7 +468,7 @@
           }
 
           &.closed {
-            background-color: #767676; // Green
+            background-color: rgb(118, 118, 118); // Green
             color: white;
 
             &::before {
@@ -817,4 +858,15 @@
     align-items: center;
 
   }
+}
+
+.item-empty {
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  margin: 5px 0;
+  padding: 0 5px;
+  min-height: 80px;
 }

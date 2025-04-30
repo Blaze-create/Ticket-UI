@@ -43,13 +43,19 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="dashboard-title">
             <div class="title">
                 <h1>FAQ Management</h1>
                 <span>Showing 10 of 50 </span>
             </div>
             <div class="sidetab">
+                <div class="search">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
                 <div class="menu">
                     <div data-bs-toggle="tooltip" data-bs-title="Create a new FAQ">
                         <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
@@ -60,7 +66,7 @@
         </div>
     </div>
 
-    <div class="container item-table">
+    <div class="container-fluid item-table">
         <div class="item-wrapper">
             <div class="table-heading faq">
                 <div class="date">
@@ -71,6 +77,9 @@
                 </div>
                 <div class="type">
                     Category
+                </div>
+                <div class="tag">
+                    Tags
                 </div>
                 <div class="role">
                     Created by
@@ -92,6 +101,16 @@
                 <div class="item-type">
                     Hardware
                 </div>
+                <div class="item-tag">
+                    <div class="tag-wrapper">
+                        <div class="a-tag">hardware</div>
+                        <div class="a-tag">software</div>
+                        <div class="a-tag">network</div>
+                        <div class="a-tag">network</div>
+                        <div class="a-tag">network</div>
+                        <div class="a-tag"><i class="fa-solid fa-plus"></i></div>
+                    </div>
+                </div>
                 <div class="user-detail">
                     <div class="commonname">
                         Castel Charles Nicolas
@@ -104,7 +123,87 @@
                     </div>
                 </div>
                 <div class="item-status">
-                    Draft
+                    <div class="faq-visibility public">
+                        <i class="fa-solid fa-globe"></i> Public
+                    </div>
+                </div>
+                <div class="item-action">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="">View</button>
+                </div>
+            </div>
+            <div class="item-row faq">
+                <div class="date">
+                    1 day ago
+                </div>
+                <div class="item-title">
+                    How can I update my account information?
+                </div>
+                <div class="item-type">
+                    Hardware
+                </div>
+                <div class="item-tag">
+                    <div class="tag-wrapper">
+                        <div class="a-tag">hardware</div>
+                        <div class="a-tag">software</div>
+                        <div class="a-tag">network</div>
+                        <div class="a-tag">network</div>
+                        <div class="a-tag">network</div>
+                    </div>
+                </div>
+                <div class="user-detail">
+                    <div class="commonname">
+                        Castel Charles Nicolas
+                    </div>
+                    <div class="department">
+                        IT Unit
+                    </div>
+                    <div class="title">
+                        IT Support Officer
+                    </div>
+                </div>
+                <div class="item-status">
+                    <div class="faq-visibility draft">
+                        <i class="fa-solid fa-pen-to-square"></i> Draft
+                    </div>
+                </div>
+                <div class="item-action">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="">View</button>
+                </div>
+            </div>
+            <div class="item-row faq">
+                <div class="date">
+                    1 day ago
+                </div>
+                <div class="item-title">
+                    How can I update my account information?
+                </div>
+                <div class="item-type">
+                    Hardware
+                </div>
+                <div class="item-tag">
+                    <div class="tag-wrapper">
+                        <div class="a-tag">hardware</div>
+                        <div class="a-tag">software</div>
+                        <div class="a-tag">network</div>
+                        <div class="a-tag">network</div>
+                        <div class="a-tag">network</div>
+                    </div>
+                </div>
+                <div class="user-detail">
+                    <div class="commonname">
+                        Castel Charles Nicolas
+                    </div>
+                    <div class="department">
+                        IT Unit
+                    </div>
+                    <div class="title">
+                        IT Support Officer
+                    </div>
+                </div>
+                <div class="item-status">
+                    <div class="faq-visibility internal">
+                        <i class="fa-solid fa-eye-slash"></i> Private
+                    </div>
                 </div>
                 <div class="item-action">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="">View</button>
@@ -116,7 +215,7 @@
 
     <div class="modal fade" data-bs-backdrop="static" id="addFAQ" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
             <form class="modal-content" id="addForm">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">
@@ -126,7 +225,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">FAQ Title</label>
+                        <label for="exampleFormControlInput1" class="form-label">FAQ Question</label>
                         <input type="text" class="form-control">
                     </div>
                     <div class="mb-3">
@@ -201,8 +300,67 @@
         </div>
     </div>
 
+    <div class="modal fade show" style="display: block;" data-bs-backdrop="static" id="viewFaq" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <form class="modal-content" id="addForm">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        Confirm Deletion
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <div class="faq-id">
+                            FAQ ID: <span class="badge bg-primary">12345</span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">FAQ Question</label>
+                        <input type="text" class="form-control" value="How can I update my account information?">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Answer</label>
+                        <textarea class="form-control" rows="4">
+                            1.Try a different port or USB hub.
+2.Check for physical damage inside the port.
+3.Go to Device Manager and look under Universal Serial Bus controllers. Right-click and uninstall the affected driver, then reboot.
+4.Restart your PC and try again.
+                        </textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="    " class="form-label">FAQ Type</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Unassigned</option>
+                            <option>Network</option>
+                            <option value="1">Hardware</option>
+                            <option value="2">Software</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="    " class="form-label">Status</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Draft</option>
+                            <option>internal</option>
+                            <option value="1">public</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Tags (comma-separated)</label>
+                        <input type="text" class="form-control">
+                    </div>
 
-
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeBtn">
+                            Close
+                        </button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+            </form>
+        </div>
+    </div>
 
     <script>
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')

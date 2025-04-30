@@ -262,7 +262,7 @@
 }
 .container-fluid.item-table .item-wrapper .table-heading.faq,
 .container.item-table .item-wrapper .table-heading.faq {
-  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 1fr;
 }
 .container-fluid.item-table .item-wrapper .table-heading .date,
 .container-fluid.item-table .item-wrapper .table-heading .user,
@@ -275,6 +275,7 @@
 .container-fluid.item-table .item-wrapper .table-heading .Task-Assigned,
 .container-fluid.item-table .item-wrapper .table-heading .role,
 .container-fluid.item-table .item-wrapper .table-heading .task,
+.container-fluid.item-table .item-wrapper .table-heading .tag,
 .container-fluid.item-table .item-wrapper .table-heading .faq-title,
 .container.item-table .item-wrapper .table-heading .date,
 .container.item-table .item-wrapper .table-heading .user,
@@ -287,6 +288,7 @@
 .container.item-table .item-wrapper .table-heading .Task-Assigned,
 .container.item-table .item-wrapper .table-heading .role,
 .container.item-table .item-wrapper .table-heading .task,
+.container.item-table .item-wrapper .table-heading .tag,
 .container.item-table .item-wrapper .table-heading .faq-title {
   padding: 10px;
   text-align: left;
@@ -310,7 +312,7 @@
 }
 .container-fluid.item-table .item-wrapper .item-row.faq,
 .container.item-table .item-wrapper .item-row.faq {
-  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 1fr;
 }
 .container-fluid.item-table .item-wrapper .item-row .date,
 .container-fluid.item-table .item-wrapper .item-row .user-detail,
@@ -320,6 +322,7 @@
 .container-fluid.item-table .item-wrapper .item-row .item-status,
 .container-fluid.item-table .item-wrapper .item-row .priority,
 .container-fluid.item-table .item-wrapper .item-row .item-action,
+.container-fluid.item-table .item-wrapper .item-row .item-tag,
 .container-fluid.item-table .item-wrapper .item-row .number,
 .container-fluid.item-table .item-wrapper .item-row .role,
 .container.item-table .item-wrapper .item-row .date,
@@ -330,6 +333,7 @@
 .container.item-table .item-wrapper .item-row .item-status,
 .container.item-table .item-wrapper .item-row .priority,
 .container.item-table .item-wrapper .item-row .item-action,
+.container.item-table .item-wrapper .item-row .item-tag,
 .container.item-table .item-wrapper .item-row .number,
 .container.item-table .item-wrapper .item-row .role {
   display: flex;
@@ -344,6 +348,26 @@
 .container.item-table .item-wrapper .item-row .item-description,
 .container.item-table .item-wrapper .item-row .item-id {
   display: none;
+}
+.container-fluid.item-table .item-wrapper .item-row .item-tag,
+.container.item-table .item-wrapper .item-row .item-tag {
+  justify-content: start;
+}
+.container-fluid.item-table .item-wrapper .item-row .item-tag .tag-wrapper,
+.container.item-table .item-wrapper .item-row .item-tag .tag-wrapper {
+  width: 100%;
+}
+.container-fluid.item-table .item-wrapper .item-row .item-tag .tag-wrapper .a-tag,
+.container.item-table .item-wrapper .item-row .item-tag .tag-wrapper .a-tag {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 1px 5px;
+  border-radius: 5px;
+  font-size: 9px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 .container-fluid.item-table .item-wrapper .item-row .role,
 .container.item-table .item-wrapper .item-row .role {
@@ -391,6 +415,27 @@
 .container.item-table .item-wrapper .item-row .item-action button {
   padding: 5px 10px;
 }
+.container-fluid.item-table .item-wrapper .item-row .item-status .faq-visibility,
+.container.item-table .item-wrapper .item-row .item-status .faq-visibility {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+.container-fluid.item-table .item-wrapper .item-row .item-status .faq-visibility.public,
+.container.item-table .item-wrapper .item-row .item-status .faq-visibility.public {
+  background: rgba(0, 128, 0, 0.5);
+  color: white;
+}
+.container-fluid.item-table .item-wrapper .item-row .item-status .faq-visibility.internal,
+.container.item-table .item-wrapper .item-row .item-status .faq-visibility.internal {
+  background: rgba(128, 0, 0, 0.5);
+  color: white;
+}
+.container-fluid.item-table .item-wrapper .item-row .item-status .faq-visibility.draft,
+.container.item-table .item-wrapper .item-row .item-status .faq-visibility.draft {
+  background: rgba(0, 0, 128, 0.5);
+  color: white;
+}
 .container-fluid.item-table .item-wrapper .item-row .item-status span,
 .container.item-table .item-wrapper .item-row .item-status span {
   font-size: 13px;
@@ -399,7 +444,7 @@
 }
 .container-fluid.item-table .item-wrapper .item-row .item-status span.open,
 .container.item-table .item-wrapper .item-row .item-status span.open {
-  background-color: #2857a7;
+  background-color: rgb(40, 87, 167);
   color: white;
 }
 .container-fluid.item-table .item-wrapper .item-row .item-status span.open::before,
@@ -408,7 +453,7 @@
 }
 .container-fluid.item-table .item-wrapper .item-row .item-status span.closed,
 .container.item-table .item-wrapper .item-row .item-status span.closed {
-  background-color: #767676;
+  background-color: rgb(118, 118, 118);
   color: white;
 }
 .container-fluid.item-table .item-wrapper .item-row .item-status span.closed::before,
@@ -746,4 +791,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.item-empty {
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  margin: 5px 0;
+  padding: 0 5px;
+  min-height: 80px;
 }/*# sourceMappingURL=style.css.map */
